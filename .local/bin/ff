@@ -1,0 +1,9 @@
+#!/bin/bash
+
+declare -a options=(
+	"firefox $HOME/index.html"
+	"firefox https://webmail.dyalog.com"
+	"firefox https://google.com"
+)
+
+bash -c "$(printf "%s\n" "${options[@]}" | dmenu -i -l "${#options[@]}" -p "firefox init")"

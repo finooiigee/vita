@@ -13,20 +13,18 @@ keys = [
     Key([mod], "r", lazy.spawn("dmenu_run")),
     
     Key([mod, "control"], "r", lazy.reload_config()),
-    Key([mod, "control"], "q", lazy.shutdown()),
+    Key([mod, "control"], "q", lazy.shutdown())
 ]
 
 layouts = [
     layout.Max(),
-    layout.TreeTab(font="SAX2", sections=["#"]),
+    layout.TreeTab(font="SAX2", sections=["#"])
 ]
 
-widget_defaults = dict(font="SAX2", fontsize=12, padding=3,)
+widget_defaults = dict(font="SAX2", fontsize=12, padding=3)
 extension_defaults = widget_defaults.copy()
 
-screens = [
-    Screen(),
-]
+screens = [Screen()]
 
 dgroups_key_binder = None
 dgroups_app_rules = []

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+while IFS= read -r i
+do
+	case $i in
+		*-*)
+		wmctrl -i -r $(echo "$i" | cut -d " " -f1) -N "$(echo "$i" | awk -F"-" '{print $NF}')"
+		;;
+		*)
+		wmctrl -i -r $(echo "$i" | cut -d " " -f1) -N "$(echo "$i" | awk -F" " '{print $NF}')"
+		;;
+	esac	
+done <<< $(wmctrl -l)
